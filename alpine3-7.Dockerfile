@@ -174,4 +174,4 @@ FROM runtime-deps AS distributable
 COPY --from=builder /bin/wkhtmltopdf /bin/wkhtmltopdf
 
 # 2: Set wkhtmltopdf as the entrypoint:
-ENTRYPOINT /bin/wkhtmltopdf
+ENTRYPOINT ["/bin/wkhtmltopdf"]
