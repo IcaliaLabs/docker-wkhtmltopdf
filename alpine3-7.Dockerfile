@@ -173,5 +173,8 @@ FROM runtime-deps AS distributable
 # 1: Copy the wkhtmltopdf executable:
 COPY --from=builder /bin/wkhtmltopdf /bin/wkhtmltopdf
 
+# 2: Copy the entrypoint script:
+COPY ./alpine-entrypoint.sh /bin/entrypoint.sh
+
 # 2: Set wkhtmltopdf as the entrypoint:
-ENTRYPOINT ["/bin/wkhtmltopdf"]
+ENTRYPOINT ["/bin/entrypoint.sh"]
